@@ -57,7 +57,7 @@ def write_nginx_config():
         )
 
         subprocess.run(['nginx', '-t'], check=True)
-        subprocess.run(['systemctl', 'reload', 'nginx'], check=True)
+      #   subprocess.run(['systemctl', 'reload', 'nginx'], check=True)
 
         if not self_signed_certs:
             subprocess.run(
@@ -92,7 +92,7 @@ def write_nginx_config():
             direct_key.symlink_to(etc_key)
 
     subprocess.run(['nginx', '-t'], check=True)
-    subprocess.run(['systemctl', 'reload', 'nginx'], check=True)
+   #  subprocess.run(['systemctl', 'reload', 'nginx'], check=True)
 
     curl_text_lines = sorted(curl_text_mix.splitlines())
     if config.ofm_config.get('skip_planet'):

@@ -49,7 +49,7 @@ def nginx(c):
     sudo_cmd(c, 'curl https://ssl-config.mozilla.org/ffdhe2048.txt -o /etc/nginx/ffdhe2048.txt')
 
     c.sudo('nginx -t')
-    c.sudo('service nginx restart')
+    #c.sudo('service nginx restart')
 
 
 def certbot(c):
