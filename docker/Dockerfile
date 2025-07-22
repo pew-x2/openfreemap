@@ -15,7 +15,6 @@ WORKDIR /checkout
 RUN git clone -b dockerize-debug https://github.com/pew-x2/openfreemap.git
 WORKDIR /checkout/openfreemap
 COPY config/env.sample /checkout/openfreemap/config/.env
-RUN mkdir -p /mnt/ofm
 
 RUN python3 -m venv py_envs
 RUN . /checkout/openfreemap/py_envs/bin/activate && pip install -e .

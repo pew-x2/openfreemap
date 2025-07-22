@@ -90,3 +90,46 @@ server {
 http://localhost/styles/liberty
 
 curl -sI http://localhost/monaco | sort
+
+
+nginx.py # 264
+
+nginx.py # 264
+```conf
+
+        # latest JSON {area}
+        location = /{area} {{ # no trailing slash
+            alias {tilejson_path}; # no trailing slash
+
+            expires 1d;
+            default_type application/json;
+
+            add_header 'Access-Control-Allow-Origin' '*' always;
+            add_header Cache-Control public;
+            add_header X-Robots-Tag "noindex, nofollow" always;
+
+            add_header x-ofm-debug 'latest JSON {area}';
+        }}
+
+
+        location = /monaco {
+            alias {tilejson_path}; # no trailing slash
+
+            expires 1d;
+            default_type application/json;
+
+            add_header 'Access-Control-Allow-Origin' '*' always;
+            add_header Cache-Control public;
+            add_header X-Robots-Tag "noindex, nofollow" always;
+
+            add_header x-ofm-debug 'latest JSON {area}';
+        }
+
+
+```
+
+
+- varför funkar inte docker compose volym?
+- ladda ned planeten
+   - döp om path till `planet`
+- lägg in planeten och skapa nginx conf
