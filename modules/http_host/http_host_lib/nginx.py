@@ -11,7 +11,7 @@ def write_nginx_config():
     print('Writing nginx config')
 
     if not config.mnt_dir.exists():
-        sys.exit('  mount needs to be run first')
+        sys.exit(f'  mount needs to be run first, config.mnt_dir: `{config.mnt_dir}`')
 
     curl_text_mix = ''
 

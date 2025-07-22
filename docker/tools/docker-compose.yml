@@ -1,0 +1,11 @@
+services:
+  debug:
+    image: pwr/openfreemap
+    ports:
+      - 8080:80
+    volumes:
+      # download btrfs from
+      # https://btrfs.openfreemap.com/areas/monaco/20250720_231000_pt/tiles.btrfs.gz
+      # unzip with `gunzip tiles.btrfs.gz`
+      # - ${PWD}/tmp/tiles.btrfs:/data/ofm/http_host/runs/monaco/20250720_231000_pt/tiles.btrfs
+      - ${PWD}/tmp/tiles.btrfs:/mnt/ofm/monaco-20250720_231000_pt
