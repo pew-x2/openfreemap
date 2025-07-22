@@ -67,3 +67,26 @@ data/ofm/http_host/runs/monaco/20250720_231000_pt/tiles.btrfs /mnt/ofm/monaco-20
 ## TODO
 - Start nginx
 - mount files
+
+
+
+
+http://localhost:8080/styles/liberty.json
+
+
+
+```conf
+server {
+    listen 80;
+    server_name localhost;
+
+    location / {
+        default_type text/plain;
+        return 200 'Hello, World!';
+    }
+}
+```
+
+http://localhost/styles/liberty
+
+curl -sI http://localhost/monaco | sort
