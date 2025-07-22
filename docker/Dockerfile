@@ -12,7 +12,7 @@ RUN cp /root/.ssh/id_ed25519.pub ~/.ssh/authorized_keys
 RUN /etc/init.d/ssh start
 # setting up code
 WORKDIR /checkout
-RUN git clone -b dockerize https://github.com/pew-x2/openfreemap.git
+RUN git clone -b dockerize-debug https://github.com/pew-x2/openfreemap.git
 WORKDIR /checkout/openfreemap
 COPY config/env.sample /checkout/openfreemap/config/.env
 RUN mkdir -p /mnt/ofm
