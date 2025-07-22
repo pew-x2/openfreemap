@@ -36,7 +36,7 @@ def full_sync(force=False):
 
     if btrfs_downloaded or versions_changed or assets_changed or force:
         auto_clean_btrfs()
-        auto_mount()
+      #   auto_mount()
 
         write_nginx_config()
 
