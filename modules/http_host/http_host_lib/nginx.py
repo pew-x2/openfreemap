@@ -105,6 +105,7 @@ def write_nginx_config():
 
 
 def create_nginx_conf(*, template_path, local, domain):
+    print(f'  create_nginx_conf, domain: {domain} local: {local}')
     location_str, curl_text = create_location_blocks(local=local, domain=domain)
 
     with open(template_path) as fp:
